@@ -30,7 +30,7 @@ ul.page-switch-buttons{
     color: white;
 }
 
-a{
+ul a{
     font-family:Arial, Helvetica, sans-serif;
     color: white;
     text-decoration: none;
@@ -43,4 +43,27 @@ a{
 li{
     list-style: none;
     text-decoration: none;
+}
+
+.product-cell{
+    width: 20vw;
+}
+
+.product-image{
+    width: 100%;
+}
+
+.products-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+}
+
+.product-cell{
+    background-color: teal;
+    padding: 10px;
+}
+
+.add-to-cart{
+    background-color: red;
 }
