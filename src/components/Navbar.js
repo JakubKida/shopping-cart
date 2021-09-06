@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const NavBar = (props) => {
   return (
     <div className="navbar">
-        <h1>FakeStore</h1>
+      <h1>FakeStore</h1>
       <ul className="page-switch-buttons">
         <Link to="/">
           <li>Home</li>
