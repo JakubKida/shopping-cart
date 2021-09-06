@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 const ProductsPage = (props) => {
   const [items, setItem] = useState([]);
 
-  const [checkedIndexes, setCheckedIndexes] = useState([]);
+  const [checkedIndexes, setCheckedIndexes] = useState([true,true,true,true]);
 
-  const [filteredCategories, setFilteredCategories] = useState([]);
+  const [filteredCategories, setFilteredCategories] = useState(["electronics","jewelery","men's clothing","women's clothing"]);
 
   useEffect(() => {
     fetchProducts();
@@ -33,7 +33,7 @@ const ProductsPage = (props) => {
     console.log(filteredCategories);
     setCheckedIndexes(...[checkedIndexes]);
   };
-
+debugger;
   return (
     <div className="products-page">
       <h1>This is a Products page.</h1>
@@ -43,7 +43,7 @@ const ProductsPage = (props) => {
         id="electronics"
         type="checkbox"
         onChange={handleCheckboxChange}
-        isSelected={checkedIndexes[0]}
+        checked={checkedIndexes[0]}
       ></input>
       <label htmlFor="electronics">electronics</label>
       <input
@@ -52,7 +52,7 @@ const ProductsPage = (props) => {
         id="jewelery"
         type="checkbox"
         onChange={handleCheckboxChange}
-        isSelected={checkedIndexes[1]}
+        checked={checkedIndexes[1]}
       ></input>
       <label htmlFor="jewelery">jewelery</label>
       <input
@@ -61,7 +61,7 @@ const ProductsPage = (props) => {
         id="men-cloth"
         type="checkbox"
         onChange={handleCheckboxChange}
-        isSelected={checkedIndexes[2]}
+        checked={checkedIndexes[2]}
       ></input>
       <label htmlFor="men-cloth">men's clothing</label>
       <input
@@ -70,7 +70,7 @@ const ProductsPage = (props) => {
         id="women-cloth"
         type="checkbox"
         onChange={handleCheckboxChange}
-        isSelected={checkedIndexes[3]}
+        checked={checkedIndexes[3]}
       ></input>
       <label htmlFor="women-cloth">women's clothing</label>
       <ProductsGrid
