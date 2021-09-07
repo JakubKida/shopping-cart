@@ -1,0 +1,22 @@
+.footer{
+    width: 100vw;
+    // position: absolute;
+    bottom:0;
+    left:0;
+    text-align: center;
+    font-family: $font-stack;
+    background-color: darken($color: $emphasis-color, $amount: 5);
+    padding: 15px;
+    margin-top: 20px;
+    color: white;
+    font-weight: 700;
+    align-self:flex-start;
+    
+    &:hover{
+        text-decoration: underline;
+    }
+
+    i{
+        margin-left: 5px;
+    }
+}

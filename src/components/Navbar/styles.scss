@@ -1,0 +1,82 @@
+.navbar {
+  height: 4.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  font-family: $font-stack;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+
+  h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin-left: 20px;
+    padding: 10px;
+
+    &::after {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f02c";
+      font-size: 1.5rem;
+      color: $emphasis-color;
+      margin-left: 5px;
+    }
+  }
+
+  .page-switch-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin-right: 10px;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+    li {
+      padding: 5px 10px;
+      border-radius: 100px;
+      margin: 0 5px;
+      transition: background-color 0.25s ease-in-out;
+      list-style: none;
+      text-decoration: none;
+    }
+
+    .highlight {
+      background-color: $emphasis-color;
+    }
+
+    .cart {
+      border-radius: 100%;
+      padding: 10px;
+      position: relative;
+
+      .shopping-qiantity-indicator {
+        width: 38%;
+        height: 38%;
+        text-align: center;
+        position: absolute;
+        font-size: 1rem;
+        background-color: $emphasis-color;
+        border-radius: 100%;
+        bottom: -0px;
+        right: -5px;
+
+        &.hidden {
+          display: none;
+        }
+      }
+    }
+
+    .cart::after {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f07a";
+      font-size: 1.5rem;
+    }
+  }
+}

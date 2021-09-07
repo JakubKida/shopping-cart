@@ -1,0 +1,74 @@
+.main-page {
+    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+
+  .description {
+    animation: 0.5s ease-out 0s 1 slideInFromLeft;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 27%;
+    font-family: $font-stack;
+
+    h1 {
+      text-align: center;
+      font-weight: 700;
+      font-size: 2.5rem;
+      text-decoration: underline;
+      text-decoration-color: $emphasis-color;
+      text-underline-offset: 8px;
+      margin: 0;
+      margin-bottom: 10px;
+    }
+
+    p {
+      text-align: justify;
+      width: 80%;
+      text-justify: newspaper;
+      font-weight: 500;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .goto-shop-button {
+      padding: 10px;
+      border: none;
+      border-radius: 100px;
+      background-color: $emphasis-color;
+      color: white;
+      margin-right: 5px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background-color 0.25s ease-in-out;
+      transition: transform 0.25s ease-in-out;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      &:active {
+        filter: brightness(1.1);
+      }
+    }
+
+    button::after {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      margin-left: 5px;
+      content: "\f061";
+    }
+  }
+
+  img {
+    animation: 0.5s ease-out 0s 1 slideInFromTop;
+    clip: rect(0px, 60px, 2000px, 0px);
+    width: 40%;
+  }
+}

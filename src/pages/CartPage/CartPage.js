@@ -1,3 +1,5 @@
+import Footer from "../../components/Footer/Footer";
+
 const CartPage = (props) => {
   const removeOneItem = (event) => {
     props.removeFromCart(event.target.dataset.index);
@@ -9,8 +11,8 @@ const CartPage = (props) => {
 
   console.log("rerendering");
   return (
-    <div>
-      <h1>This is a Cart page</h1>
+    <div className="cart-page">
+      <h1>Your Cart</h1>
       <ul>
         {props.shoppingCart.map((cartItem) => (
           <li>
@@ -32,7 +34,7 @@ const CartPage = (props) => {
       {props.shoppingCart.length > 0 ? (
         <div>
           <div>
-            Razem:
+            Total:
             {props.shoppingCart
               .reduce(
                 (accumulator, cartItem) =>
@@ -46,6 +48,7 @@ const CartPage = (props) => {
       ) : (
         <div>The cart is Empty</div>
       )}
+      <Footer/>
     </div>
   );
 };

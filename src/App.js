@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
-import NavBar from "./components/Navbar";
-import CartPage from "./pages/CartPage";
-import HomePage from "./pages/HomePage";
+import Footer from "./components/Footer/Footer";
+import NavBar from "./components/Navbar/Navbar";
+import CartPage from "./pages/CartPage/CartPage";
+import HomePage from "./pages/HomePage/HomePage";
 import ProductDetailsPage from "./pages/ProductDetailPage";
-import ProductsPage from "./pages/ProductsPage";
-import "./styles/style.css";
+import ProductsPage from "./pages/ProductsPage/ProductsPage";
+import "./style.scss";
 
 const App = () => {
   const [shoppingCart, setShoppingCart] = useState([]);
@@ -17,7 +18,7 @@ const App = () => {
     } else {
       shoppingCart.push({ item: item, quantity: 1 });
     }
-    setShoppingCart(shoppingCart);
+    setShoppingCart([...shoppingCart]);
   };
 
   const removeItemFromCart = (index) => {
@@ -41,11 +42,11 @@ const App = () => {
       setShoppingCart([...shoppingCart]);
     }
   };
-
+  console.log(shoppingCart.length);
   return (
     <div>
       <Router>
-        <NavBar />
+      <NavBar uniqueItemsQuantity={shoppingCart.length} />
         <Switch>
           <Route exact path="/" component={HomePage}></Route>
           <Route
@@ -56,7 +57,9 @@ const App = () => {
           <Route
             exact
             path="/products/:id"
-            render={(props) => <ProductDetailsPage {...props} addToCart={addItemToCart} />}
+            render={(props) => (
+              <ProductDetailsPage {...props} addToCart={addItemToCart} />
+            )}
           ></Route>
           <Route
             exact

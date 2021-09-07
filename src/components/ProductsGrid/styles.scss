@@ -1,0 +1,10 @@
+.products-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr) );
+    animation: 0.25s ease-out 0s 1 fadeIn;
+    // grid-template-rows:  repeat(auto-fill, minmax(200px, 1fr) );
+    grid-auto-rows: 1fr;
+    gap: 20px;
+    width: 80%;
+}
+
