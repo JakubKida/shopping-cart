@@ -33,8 +33,10 @@
         -webkit-line-clamp: 2;
     }
 
-    &:hover{
-        transform: scale(1.05);
+    @media (hover: hover){
+        &:hover{
+            transform: scale(1.05);
+        }
     }
 
     .add-details-buttons{
@@ -43,8 +45,9 @@
 
     .add-to-cart{
         padding: 10px;
+        border: 3px solid $emphasis-color;
         background-color: $emphasis-color;
-        transition: all 0.25s ease-in-out;
+        transition: opacity 0.25s ease-in-out;
 
         &::after{
             margin-left: 5px;
@@ -53,22 +56,31 @@
             font-family: 'Font Awesome 5 Free';
         }
 
-        &:hover{
-            background-color: darken($color: $emphasis-color, $amount: 10);
-            transform: scale(0.95);
+        @media (hover: hover){
+            &:hover{
+                background-color: darken($color: $emphasis-color, $amount: 10);
+                transform: scale(0.95);
+            }
+        }
+
+        &:active{
+            border: 3px solid white;
         }
     }
 
     .see-details{
         margin-left: 5px;
         padding: 10px;
+        border: 3px solid white;
         background-color: white;
         color: black;
         transition: all 0.25s ease-in-out;
 
-        &:hover{
-            background-color: darken(white, $amount: 10);
-            transform: scale(0.95);
+        @media (hover: hover){
+            &:hover{
+                background-color: darken(white, $amount: 10);
+                transform: scale(0.95);
+            }
         }
     }
 

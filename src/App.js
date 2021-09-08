@@ -43,12 +43,13 @@ const App = () => {
   };
 
   console.log(shoppingCart.length);
+  // debugger;
   return (
-    <div>
+    <div className="main-wrapper">
       <Router>
         <NavBar
           uniqueItemsQuantity={shoppingCart.reduce(
-            (accumulator, item) => item.quantity + accumulator,
+            (accumulator, item) => parseInt(item.quantity) + accumulator,
             0
           )}
         />

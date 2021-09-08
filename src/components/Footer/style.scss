@@ -1,19 +1,21 @@
 .footer{
-    width: 100vw;
-    // position: absolute;
-    bottom:0;
-    left:0;
-    text-align: center;
-    font-family: $font-stack;
-    background-color: darken($color: $emphasis-color, $amount: 5);
-    padding: 15px;
+    align-self: flex-start;
     margin-top: 20px;
+    padding: 15px;
+    width: 100vw;
+    background-color: darken($color: $emphasis-color, $amount: 5);
     color: white;
+    // position: absolute;
+    // bottom:0;
+    // left:0;
+    text-align: center;
     font-weight: 700;
-    align-self:flex-start;
-    
-    &:hover{
-        text-decoration: underline;
+    font-family: $font-stack;
+
+    @media (hover: hover){
+        &:hover{
+            text-decoration: underline;
+        }
     }
 
     i{

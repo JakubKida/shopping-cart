@@ -1,4 +1,9 @@
 $dark-color: #023047;
-$main-color: #0087a9;
+$main-color: #0087A9;
 $light-color: #8ECAE6;
 $emphasis-color: #FB8500;
+$navbar-height: 4.5rem;
+
+@media (max-width:768px){
+    $navbar-height: 9rem;
+}

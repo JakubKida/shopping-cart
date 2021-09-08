@@ -28,7 +28,9 @@ const NavBar = (props) => {
 
   return (
     <div className="navbar">
-      <h1>FakeStore</h1>
+      <Link to="/">
+        <h1>FakeStore</h1>
+      </Link>
       <ul className="page-switch-buttons">
         <Link to="/">
           <li className={`home ${tabToHightlight === "home" ? "highlight" : ""}`}>
@@ -42,7 +44,13 @@ const NavBar = (props) => {
         </Link>
         <Link to="/cart">
           <li className={`cart ${tabToHightlight === "cart" ? "highlight" : ""}`}>
-            <div className={`shopping-qiantity-indicator ${itemsQuantity===0?'hidden':''}`}>{itemsQuantity}</div>
+            <div
+              className={`shopping-qiantity-indicator ${
+                itemsQuantity === 0 ? "hidden" : ""
+              }`}
+            >
+              {itemsQuantity}
+            </div>
           </li>
         </Link>
       </ul>

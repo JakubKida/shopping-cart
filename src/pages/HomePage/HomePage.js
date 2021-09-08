@@ -3,8 +3,8 @@ import Footer from "../../components/Footer/Footer";
 
 const HomePage = (props) => {
   return (
-    <div>
-      <div className="main-page">
+  <div className="main-page-outer">
+    <div className="main-page">
         <div className="description">
           <h1>Shopping, redefined</h1>
           <p>

@@ -1,59 +1,12 @@
 html, body{
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
-    // height: 100vh;
-    // width: 100vw;
+    width: 100%;
 }
 
-// .navbar{
-//     width: 100vw;
-//     background-color: rgb(6, 0, 65);
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     color: white;
-// }
-// .navbar h1{
-//     padding-left: 30px;
-//     font-family:Arial, Helvetica, sans-serif;
-//     font-size: 2.3rem;
-// }
-// .page-switch-buttons{
-//     width: 20%;
-//     margin: 20px;
-//     display: flex;
-//     list-style: none;
-//     justify-content: space-between;
-// }
 
-// ul.page-switch-buttons{
-//     list-style: none;
-//     text-decoration: none;
-//     color: white;
-// }
-
-// ul a{
-//     font-family:Arial, Helvetica, sans-serif;
-//     color: white;
-//     text-decoration: none;
-//     background-color: black;
-//     border: 2px solid white;
-//     padding: 10px;
-//     border-radius: 100px;
-// }
-
-// .products-grid{
-//     display: grid;
-//     grid-template-columns: repeat(3,1fr);
-//     gap: 10px;
-// }
-
-
-
-// .add-to-cart{
-//     background-color: red;
-// }
-
-// .main-page{
-
-// }
+.main-wrapper{
+    overflow-x: hidden;
+    // width: 100%;
+}
