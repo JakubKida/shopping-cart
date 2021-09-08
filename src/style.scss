@@ -1,0 +1,19 @@
+//Utitilies
+@import './utils/scss/variables';
+@import './utils/scss/fonts';
+@import './utils/scss/animations';
+
+//Global Styles
+@import './App.scss';
+
+//Page Styles
+@import './pages/HomePage/styles.scss';
+@import './pages/ProductsPage/styles.scss';
+@import './pages/CartPage/style.scss';
+@import './pages/ProductDetailPage/styles.scss';
+
+//Component Styles
+@import './components/Navbar/styles.scss';
+@import './components/ProductsGrid/styles.scss';
+@import './components/Product/styles.scss';
+@import './components/Footer/style.scss';

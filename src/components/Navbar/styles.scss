@@ -1,0 +1,111 @@
+.navbar{
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: $navbar-height;
+    background-color: black;
+    font-family: $font-stack;
+
+    h1{
+        box-sizing: border-box;
+        margin-left: 20px;
+        padding: 10px;
+        color: white;
+        font-size: 2.5rem;
+
+        &::after{
+            margin-left: 5px;
+            color: $emphasis-color;
+            content: '\f02c';
+            font-weight: 900;
+            font-size: 1.5rem;
+            font-family: 'Font Awesome 5 Free';
+        }
+    }
+
+    .page-switch-buttons{
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        margin-right: 10px;
+        font-size: 1.2rem;
+
+        a{
+            color: white;
+            text-decoration: none;
+        }
+
+        li{
+            margin: 0 5px;
+            padding: 5px 10px;
+            border-radius: 100px;
+            list-style: none;
+            text-decoration: none;
+            transition: background-color 0.25s ease-in-out;
+        }
+
+        .highlight{
+            background-color: $emphasis-color;
+        }
+
+        .cart{
+            position: relative;
+            padding: 10px;
+            border-radius: 100%;
+
+            .shopping-qiantity-indicator{
+                position: absolute;
+                right: -5px;
+                bottom: -0;
+                width: 38%;
+                height: 38%;
+                border-radius: 100%;
+                background-color: $emphasis-color;
+                text-align: center;
+                font-size: 1rem;
+
+                &.hidden{
+                    display: none;
+                }
+            }
+        }
+
+        .cart::after{
+            content: '\f07a';
+            font-weight: 900;
+            font-size: 1.5rem;
+            font-family: 'Font Awesome 5 Free';
+        }
+    }
+}
+
+@media (max-width: 768px){
+    .navbar{
+        flex-direction: column;
+        justify-content: center;
+        width: 100vw;
+        height: unset;
+
+        h1{
+            margin: 0;
+            margin-top: 5px;
+            // width: 100%;
+            width: unset;
+            text-align: left;
+        }
+
+        .page-switch-buttons{
+            margin: 0;
+            margin-bottom: 5px;
+            padding: 0;
+            width: unset;
+        }
+    }
+    // justify-content: center;
+    // align-items: center;
+    // // flex-wrap: wrap;
+}
