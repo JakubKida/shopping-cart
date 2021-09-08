@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
-import Footer from "./components/Footer/Footer";
 import NavBar from "./components/Navbar/Navbar";
 import CartPage from "./pages/CartPage/CartPage";
 import HomePage from "./pages/HomePage/HomePage";
-import ProductDetailsPage from "./pages/ProductDetailPage";
+import ProductDetailsPage from "./pages/ProductDetailPage/ProductDetailPage";
 import ProductsPage from "./pages/ProductsPage/ProductsPage";
 import "./style.scss";
 
@@ -42,11 +41,17 @@ const App = () => {
       setShoppingCart([...shoppingCart]);
     }
   };
+
   console.log(shoppingCart.length);
   return (
     <div>
       <Router>
-      <NavBar uniqueItemsQuantity={shoppingCart.length} />
+        <NavBar
+          uniqueItemsQuantity={shoppingCart.reduce(
+            (accumulator, item) => item.quantity + accumulator,
+            0
+          )}
+        />
         <Switch>
           <Route exact path="/" component={HomePage}></Route>
           <Route

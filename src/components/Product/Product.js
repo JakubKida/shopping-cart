@@ -18,7 +18,7 @@ const Product = (props) => {
           Add to cart
         </div>
         <Link to={`products/${props.product.id}`}>
-          <div className="see-details">
+          <div className="see-details" addItemToCart = {addItemToCart}>
             See details
           </div>
         </Link>
