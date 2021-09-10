@@ -1,8 +1,11 @@
-# Getting Started with Create React App
+# FakeStore
+A prototype e-commerce website written using ReactJS and Sass, using [FakeStore API](https://fakestoreapi.com) for data about products.
+
+![screenshot](./screenshot.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Available Scripts
 
 In the project directory, you can run:
 
