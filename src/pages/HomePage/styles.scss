@@ -96,9 +96,14 @@
     }
 
     img{
+        visibility: hidden;
         clip: rect(0px, 60px, 2000px, 0px);
         width: 40%;
-        animation: 0.5s ease-out 0s 1 slideInFromTop;
+
+        &.loaded{
+            visibility: visible;
+            animation: 0.5s ease-out 0s 1 slideInFromTop;
+        }
 
         @media (max-width: 768px){
             display: none;

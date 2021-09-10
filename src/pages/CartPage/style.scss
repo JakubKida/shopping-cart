@@ -6,10 +6,9 @@
     overflow-x: hidden;
     overflow-y: scroll;
     margin-top: 4.5rem;
+    width: 100%;
     height: calc(100vh - 4.5rem);
     font-family: $font-stack;
-
-    // scrollbar-width: 0;
 
     @media (max-width: 768px){
         margin-top: 7rem;
@@ -26,6 +25,8 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        min-width: 80%;
+        animation: 0.5s ease-out 0s 1 slideInFromTop;
 
         .empty-cart-message{
             padding: 10px;
@@ -43,7 +44,6 @@
         border: 0;
         border-radius: 5px;
         background-color: black;
-        // box-sizing: border-box;
         color: white;
         font-size: 1rem;
         @media (max-width: 768px){
@@ -52,10 +52,10 @@
     }
 
     table{
-        max-width: 80%;
+        min-width: 80%;
+        max-width: 95%;
         border: 2px solid black;
         border-spacing: 4px;
-        // background-color: lighten($color: $emphasis-color, $amount: 20);
         background-color: $emphasis-color;
     }
 
@@ -185,11 +185,6 @@
     }
 
     td{
-        // display: flex;
-        // flex-direction: row;
-        // justify-content: center;
-        // align-items: center;
-        // margin: 10px;
         padding: 10px;
         vertical-align: middle;
         text-align: center;
