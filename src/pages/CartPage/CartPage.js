@@ -9,7 +9,6 @@ const CartPage = (props) => {
     props.changeItemAmount(event.target.dataset.index, event.target.value);
   };
 
-  console.log("rerendering");
   return (
     <div className="cart-page">
       {props.shoppingCart.length > 0 ? (

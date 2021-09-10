@@ -18,11 +18,12 @@ const ProductsPage = (props) => {
     fetchProducts();
   },);
 
+
+  // fetch products from FakeStore API
   const fetchProducts = async () => {
     const data = await fetch("https://fakestoreapi.com/products");
     const products = await data.json();
     setItem(products);
-    //   console.log(products);
   };
 
   const handleCheckboxChange = (e) => {
@@ -36,7 +37,6 @@ const ProductsPage = (props) => {
         filteredCategories.filter((category) => category !== e.target.dataset.name)
       );
     }
-    console.log(filteredCategories);
     setCheckedIndexes(...[checkedIndexes]);
   };
 

@@ -24,7 +24,6 @@ const App = () => {
     const indexToDelete = shoppingCart.findIndex(
       (cartItem) => cartItem.item.id === parseInt(index)
     );
-    console.log("Deleting");
     if (indexToDelete !== -1) {
       shoppingCart.splice(indexToDelete, 1);
       setShoppingCart([...shoppingCart]);
@@ -42,12 +41,11 @@ const App = () => {
     }
   };
 
-  console.log(shoppingCart.length);
-  // debugger;
   return (
     <div className="main-wrapper">
       <Router>
         <NavBar
+          //pass number of items for shopping cart icon
           uniqueItemsQuantity={shoppingCart.reduce(
             (accumulator, item) => parseInt(item.quantity) + accumulator,
             0

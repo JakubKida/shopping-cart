@@ -9,6 +9,7 @@ const NavBar = (props) => {
 
   const [tabToHightlight, setTabToHighlight] = useState("/");
 
+  //switch highlighted button on path change
   useEffect(() => {
     switch (currentPath) {
       case "/":

@@ -8,10 +8,10 @@ const ProductDetailsPage = ({ match, addToCart }) => {
     fetchItem();
   });
 
+  // get a specific item from FakeStore API
   const fetchItem = async () => {
     const data = await fetch(`https://fakestoreapi.com/products/${match.params.id}`);
     const newItemData = await data.json();
-    console.log("fechin item");
     setItem(newItemData);
   };
 
@@ -19,8 +19,6 @@ const ProductDetailsPage = ({ match, addToCart }) => {
     addToCart(item);
   };
 
-  console.log(item);
-  // debugger;
   return (
     <div className="product-detail-page">
       {Object.keys(item).length !== 0 && item.constructor === Object && (

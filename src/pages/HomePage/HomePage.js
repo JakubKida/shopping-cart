@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 
-const HomePage = (props) => {
+const HomePage = () => {
   return (
-  <div className="main-page-outer">
-    <div className="main-page">
+    <div className="main-page-outer">
+      <div className="main-page">
         <div className="description">
           <h1>Shopping, redefined</h1>
           <p>
@@ -17,7 +17,13 @@ const HomePage = (props) => {
             <button className="goto-shop-button">Start shopping</button>
           </Link>
         </div>
-        <img src="assets/shopping.svg" alt="shopping"></img>
+        <img
+          src="assets/shopping.svg"
+          alt="shopping"
+          onLoad={(e) => {
+            e.target.className = "loaded";
+          }}
+        ></img>
       </div>
       <Footer />
     </div>
