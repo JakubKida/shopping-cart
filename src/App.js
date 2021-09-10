@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import { Switch, Route, HashRouter as Router } from "react-router-dom";
 import NavBar from "./components/Navbar/Navbar";
 import CartPage from "./pages/CartPage/CartPage";
 import HomePage from "./pages/HomePage/HomePage";

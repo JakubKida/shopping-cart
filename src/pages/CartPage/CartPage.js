@@ -15,6 +15,7 @@ const CartPage = (props) => {
         <div className="card-table-wrapper">
           <h1>Your Cart</h1>
           <table>
+            <tbody>
             <tr>
               <th className="hide-on-mobile"></th>
               <th>Name</th>
@@ -22,8 +23,8 @@ const CartPage = (props) => {
               <th>Price</th>
               <th></th>
             </tr>
-            {props.shoppingCart.map((cartItem) => (
-              <tr>
+            {props.shoppingCart.map((cartItem, i) => (
+              <tr key={i}>
                 <td className="image">
                   <img src={cartItem.item.image} alt={cartItem.item.image}></img>
                 </td>
@@ -58,6 +59,7 @@ const CartPage = (props) => {
                 $
               </td>
             </tr>
+            </tbody>
           </table>
           <button className="proceed-checkout">Proceed to checkout</button>
         </div>

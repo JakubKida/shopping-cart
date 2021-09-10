@@ -6,7 +6,7 @@ const Footer = () => {
         target="_blank"
         rel="noreferrer"
       >
-        GitHub/JakubKida<i class="fab fa-github"></i>
+        GitHub/JakubKida<i className="fab fa-github"></i>
       </a>
     </div>
   );
