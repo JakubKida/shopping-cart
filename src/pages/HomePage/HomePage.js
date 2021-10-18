@@ -18,7 +18,7 @@ const HomePage = () => {
           </Link>
         </div>
         <img
-          src="assets/shopping.svg"
+          src="assets/shopping.jpg"
           alt="shopping"
           onLoad={(e) => {
             e.target.className = "loaded";
