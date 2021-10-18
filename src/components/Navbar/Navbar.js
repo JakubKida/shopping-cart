@@ -21,6 +21,9 @@ const NavBar = (props) => {
       case "/cart":
         setTabToHighlight("cart");
         break;
+      case "/contact":
+        setTabToHighlight("contact");
+        break;
       default:
         setTabToHighlight("/");
         break;
@@ -41,6 +44,11 @@ const NavBar = (props) => {
         <Link to="/products">
           <li className={`products ${tabToHightlight === "products" ? "highlight" : ""}`}>
             Products
+          </li>
+        </Link>
+        <Link to="/contact">
+          <li className={`contact ${tabToHightlight === "contact" ? "highlight" : ""}`}>
+            Contact
           </li>
         </Link>
         <Link to="/cart">

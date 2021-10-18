@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Switch, Route, HashRouter as Router } from "react-router-dom";
 import NavBar from "./components/Navbar/Navbar";
 import CartPage from "./pages/CartPage/CartPage";
+import ContactPage from "./pages/ContactPage/ContactPage";
 import HomePage from "./pages/HomePage/HomePage";
 import ProductDetailsPage from "./pages/ProductDetailPage/ProductDetailPage";
 import ProductsPage from "./pages/ProductsPage/ProductsPage";
@@ -65,6 +66,7 @@ const App = () => {
               <ProductDetailsPage {...props} addToCart={addItemToCart} />
             )}
           ></Route>
+          <Route exact path="/contact" component={ContactPage}></Route>
           <Route
             exact
             path="/cart"
