@@ -10,7 +10,9 @@ const Product = (props) => {
 
   return (
     <div className="product-cell">
-      <img className="product-image" src={image} alt={title}></img>
+      <Link className="img-link" to={`products/${props.product.id}`}>
+        <img className="product-image" src={image} alt={title}></img>
+      </Link>
       <div className="product-name">{title}</div>
       <div className="product-price">{price}$</div>
       <div className="add-details-buttons">
@@ -18,9 +20,7 @@ const Product = (props) => {
           Add to cart
         </div>
         <Link to={`products/${props.product.id}`}>
-          <div className="see-details">
-            See details
-          </div>
+          <div className="see-details">See details</div>
         </Link>
       </div>
     </div>
