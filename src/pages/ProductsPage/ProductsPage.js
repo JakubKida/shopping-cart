@@ -1,9 +1,12 @@
 import ProductsGrid from "../../components/ProductsGrid/ProductsGrid";
 import { useEffect, useState } from "react";
 import Footer from "../../components/Footer/Footer";
+import Spinner from "../../components/Spinner/Spinner";
 
 const ProductsPage = (props) => {
   const [items, setItem] = useState([]);
+
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const [checkedIndexes, setCheckedIndexes] = useState([true, true, true, true]);
 
@@ -16,14 +19,15 @@ const ProductsPage = (props) => {
 
   useEffect(() => {
     fetchProducts();
-  },);
-
+  });
 
   // fetch products from FakeStore API
   const fetchProducts = async () => {
+    console.log("Fetching again!");
     const data = await fetch("https://fakestoreapi.com/products");
     const products = await data.json();
     setItem(products);
+    setIsLoaded(true);
   };
 
   const handleCheckboxChange = (e) => {
@@ -42,50 +46,56 @@ const ProductsPage = (props) => {
 
   return (
     <div className="products-page">
-      <div className="check-categories">
-        <input
-          data-index="0"
-          data-name="electronics"
-          id="electronics"
-          type="checkbox"
-          onChange={handleCheckboxChange}
-          checked={checkedIndexes[0]}
-        ></input>
-        <label htmlFor="electronics">electronics</label>
-        <input
-          data-index="1"
-          data-name="jewelery"
-          id="jewelery"
-          type="checkbox"
-          onChange={handleCheckboxChange}
-          checked={checkedIndexes[1]}
-        ></input>
-        <label htmlFor="jewelery">jewelery</label>
-        <input
-          data-index="2"
-          data-name="men's clothing"
-          id="men-cloth"
-          type="checkbox"
-          onChange={handleCheckboxChange}
-          checked={checkedIndexes[2]}
-        ></input>
-        <label htmlFor="men-cloth">men's clothing</label>
-        <input
-          data-index="3"
-          data-name="women's clothing"
-          id="women-cloth"
-          type="checkbox"
-          onChange={handleCheckboxChange}
-          checked={checkedIndexes[3]}
-        ></input>
-        <label htmlFor="women-cloth">women's clothing</label>
-      </div>
-      <ProductsGrid
-        addToCart={props.addToCart}
-        products={items}
-        checkedCategories={filteredCategories}
-      />
-      <Footer/>
+      {!isLoaded ? (
+        <Spinner></Spinner>
+      ) : (
+        <>
+          <div className="check-categories">
+            <input
+              data-index="0"
+              data-name="electronics"
+              id="electronics"
+              type="checkbox"
+              onChange={handleCheckboxChange}
+              checked={checkedIndexes[0]}
+            ></input>
+            <label htmlFor="electronics">electronics</label>
+            <input
+              data-index="1"
+              data-name="jewelery"
+              id="jewelery"
+              type="checkbox"
+              onChange={handleCheckboxChange}
+              checked={checkedIndexes[1]}
+            ></input>
+            <label htmlFor="jewelery">jewelery</label>
+            <input
+              data-index="2"
+              data-name="men's clothing"
+              id="men-cloth"
+              type="checkbox"
+              onChange={handleCheckboxChange}
+              checked={checkedIndexes[2]}
+            ></input>
+            <label htmlFor="men-cloth">men's clothing</label>
+            <input
+              data-index="3"
+              data-name="women's clothing"
+              id="women-cloth"
+              type="checkbox"
+              onChange={handleCheckboxChange}
+              checked={checkedIndexes[3]}
+            ></input>
+            <label htmlFor="women-cloth">women's clothing</label>
+          </div>
+          <ProductsGrid
+            addToCart={props.addToCart}
+            products={items}
+            checkedCategories={filteredCategories}
+          />
+        </>
+      )}
+      <Footer />
     </div>
   );
 };
